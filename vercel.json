@@ -5,7 +5,7 @@
         "src": "client/package.json",
         "use": "@vercel/static-build",
         "config": {
-          "distDir": "dist" 
+          "distDir": "dist"  // Указываем папку, которую создаёт Vite
         }
       }
     ],
@@ -13,6 +13,11 @@
       {
         "src": "/(.*)",
         "dest": "client/dist/$1"
+      },
+      // Для SPA (React Router) добавьте fallback на index.html
+      {
+        "src": "/.*",
+        "dest": "/client/dist/index.html"
       }
     ]
   }
