@@ -1,0 +1,274 @@
+/* ==========================
+   БАЗОВЫЕ СТИЛИ
+========================== */
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  background: radial-gradient(circle at center, #1f1f2f, #111);
+  font-family: 'Inter', sans-serif;
+  color: #fff;
+}
+
+/* ==========================
+   КОНТЕЙНЕР
+========================== */
+.voice-chat-container {
+  width: 100vw;
+  height: 100vh;
+  padding: 2rem 2rem 5rem;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 2rem;
+  overflow-y: auto;
+}
+
+/* ==========================
+   ТЕКСТ И ЗАГОЛОВКИ
+========================== */
+.title {
+  font-size: 3rem;
+  font-weight: 800;
+  text-align: center;
+  color: #00f5d4;
+  text-shadow: 0 0 20px #00f5d4;
+  margin-top: 3rem;
+  animation: fadeInDown 0.7s ease;
+}
+
+.answer-text {
+  font-size: 1.4rem;
+  text-align: center;
+  line-height: 1.6;
+  word-wrap: break-word;
+  animation: fadeInUp 0.4s ease, glowText 1.5s infinite alternate;
+}
+
+/* ==========================
+   БЛОК ВЫБОРА РЕЖИМА
+========================== */
+.mode-selection {
+  display: flex;
+  gap: 4rem;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2rem;
+  flex-wrap: wrap;
+}
+
+/* ==========================
+   КНОПКИ
+========================== */
+.mode-btn,
+.submit-btn,
+.stop-btn {
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+  color: white;
+  transition: all 0.3s ease;
+  animation: glowPulse 2s infinite alternate;
+  box-shadow: 0 6px 0 rgba(0, 0, 0, 0.3); /* 👈 объём */
+  position: relative;
+  top: 0;
+}
+
+.mode-btn:hover,
+.submit-btn:hover,
+.stop-btn:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.4);
+}
+
+/* ===== КНОПКА РЕЖИМА ===== */
+.mode-btn {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  font-size: 1.4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 1rem;
+  white-space: pre-line;
+}
+
+.mode-btn.kind {
+  background: linear-gradient(135deg, #4facfe, #00f2fe);
+  box-shadow: 0 0 30px rgba(0, 242, 254, 0.6);
+}
+
+.mode-btn.angry {
+  background: linear-gradient(135deg, #f093fb, #f5576c);
+  box-shadow: 0 0 30px rgba(245, 87, 108, 0.6);
+}
+
+.mode-btn.active {
+  animation: pulse 1.5s infinite, glowPulse 2s infinite alternate;
+}
+
+/* ===== КНОПКА ОТПРАВКИ ===== */
+.submit-btn {
+  background: linear-gradient(135deg, #6e8efb, #a777e3);
+  border-radius: 999px;
+  padding: 1rem 2rem;
+  font-size: 1rem;
+}
+
+/* ===== КНОПКА СТОПА ===== */
+.stop-btn {
+  background-color: #ff4757;
+  font-size: 1rem;
+  padding: 1rem 2rem;
+  border-radius: 999px;
+  box-shadow: 0 6px 0 rgba(0, 0, 0, 0.3);
+}
+
+.stop-btn:hover {
+  background-color: #ff6b81;
+}
+
+/* ==========================
+   ВВОД ТЕКСТА
+========================== */
+.text-form {
+  display: flex;
+  gap: 1rem;
+  width: 100%;
+  max-width: 700px;
+  padding: 1rem;
+  box-sizing: border-box;
+  justify-content: center;
+  margin: 2rem 0;
+}
+
+.text-input {
+  flex: 1;
+  padding: 1rem 1.5rem;
+  border-radius: 999px;
+  border: none;
+  font-size: 1rem;
+  background-color: #2a2a3d;
+  color: white;
+  box-shadow: inset 0 0 5px rgba(0, 255, 255, 0.3);
+}
+
+.text-input:focus {
+  outline: none;
+  box-shadow: 0 0 10px #00f5d4;
+}
+
+/* ==========================
+   ПОПАП ОТВЕТА
+========================== */
+.answer-popup {
+  background: #222;
+  padding: 2rem;
+  border-radius: 1rem;
+  margin: 2rem 0 1.5rem;
+  max-width: 90vw;
+  width: 700px;
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.2);
+  animation: fadeInUp 0.4s ease;
+}
+
+/* ==========================
+   КОНТЕЙНЕР КНОПКИ СТОПА
+========================== */
+.stop-btn-wrapper {
+  margin: 2rem 0;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+/* ==========================
+   АНИМАЦИИ
+========================== */
+@keyframes pulse {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes glowPulse {
+  0% {
+    box-shadow: 0 0 15px rgba(0, 255, 255, 0.2);
+  }
+  100% {
+    box-shadow: 0 0 30px rgba(0, 255, 255, 0.5);
+  }
+}
+
+@keyframes glowText {
+  0% {
+    text-shadow: 0 0 10px rgba(0, 255, 255, 0.3);
+  }
+  100% {
+    text-shadow: 0 0 20px rgba(0, 255, 255, 0.6);
+  }
+}
+
+@keyframes globalGlow {
+  0% {
+    box-shadow: 0 0 10px rgba(0, 255, 255, 0.2);
+  }
+  100% {
+    box-shadow: 0 0 30px rgba(0, 255, 255, 0.6);
+  }
+}
+
+@keyframes textGlow {
+  0% {
+    text-shadow: 0 0 10px rgba(0, 255, 255, 0.2);
+  }
+  100% {
+    text-shadow: 0 0 25px rgba(0, 255, 255, 0.6);
+  }
+}
+
+/* ==========================
+   ДОП. КЛАССЫ ЭФФЕКТОВ
+========================== */
+.glow {
+  animation: globalGlow 2.5s ease-in-out infinite alternate;
+}
+
+.glow-text {
+  animation: textGlow 2s ease-in-out infinite alternate;
+}
+
+.answer-text-animate {
+  animation: fadeInUp 0.4s ease, textGlow 1.5s ease-in-out infinite alternate;
+}

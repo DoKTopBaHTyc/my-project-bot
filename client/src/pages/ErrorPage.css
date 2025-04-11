@@ -1,0 +1,49 @@
+.error-container {
+    height: 100vh;
+    width: 100vw;
+    background: radial-gradient(circle at center, #2a0f0f, #000);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+  
+  .error-image {
+    max-width: 70%;
+    max-height: 70%;
+    animation: zoomIn 1.8s ease-out forwards, pulseZoom 2.5s ease-in-out infinite;
+    animation-delay: 0s, 1.8s; /* Первая анимация сразу, вторая — после завершения первой */
+    filter: drop-shadow(0 0 15px #ff4d4d);
+    user-select: none;
+    pointer-events: none;
+    opacity: 0;
+  }
+  
+  /* Приближение (один раз при загрузке) */
+  @keyframes zoomIn {
+    0% {
+      transform: scale(0.3); /* 👈 Вот тут регулируешь стартовый размер */
+      opacity: 0;
+    }
+    100% {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+  
+  /* Постоянная пульсация */
+  @keyframes pulseZoom {
+    0% {
+      transform: scale(1);
+      filter: drop-shadow(0 0 10px #ff4d4d);
+    }
+    50% {
+      transform: scale(1.08);
+      filter: drop-shadow(0 0 30px #ff1a1a);
+    }
+    100% {
+      transform: scale(1);
+      filter: drop-shadow(0 0 10px #ff4d4d);
+    }
+  }
+  
