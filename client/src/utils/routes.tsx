@@ -1,9 +1,9 @@
 import type { RouteObject } from 'react-router';
-import ErrorPage from './pages/ErrorPage';
-import EvenLessMain from './pages/EvenLessMain';
-import MainPage from './pages/MainPage';
-import NotMainPage from './pages/NotMainPage';
-import TotallyNotMain from './pages/TotallyNotMain';
+import ErrorPage from '../pages/ErrorPage';
+import EvenLessMain from '../pages/EvenLessMain';
+import MainPage from '../pages/MainPage';
+import NotMainPage from '../pages/NotMainPage';
+import TotallyNotMain from '../pages/TotallyNotMain';
 
 export const routes: RouteObject[] = [
   {

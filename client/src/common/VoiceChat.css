@@ -9,6 +9,10 @@ body {
   background: radial-gradient(circle at center, #1f1f2f, #111);
   font-family: 'Inter', sans-serif;
   color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
 }
 
 /* ==========================
@@ -16,13 +20,13 @@ body {
 ========================== */
 .voice-chat-container {
   width: 100vw;
-  height: 100vh;
-  padding: 2rem 2rem 5rem;
+  min-height: 100vh;
+  padding: 2rem;
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: flex-start;
+  justify-content: center; /* Центрирование по вертикали */
   gap: 2rem;
   overflow-y: auto;
 }
@@ -36,7 +40,7 @@ body {
   text-align: center;
   color: #00f5d4;
   text-shadow: 0 0 20px #00f5d4;
-  margin-top: 3rem;
+  margin: 0; /* Убрали верхний отступ */
   animation: fadeInDown 0.7s ease;
 }
 
@@ -56,7 +60,7 @@ body {
   gap: 4rem;
   justify-content: center;
   align-items: center;
-  margin-top: 2rem;
+  margin: 0; /* Убрали верхний отступ */
   flex-wrap: wrap;
 }
 
@@ -72,7 +76,7 @@ body {
   color: white;
   transition: all 0.3s ease;
   animation: glowPulse 2s infinite alternate;
-  box-shadow: 0 6px 0 rgba(0, 0, 0, 0.3); /* 👈 объём */
+  box-shadow: 0 6px 0 rgba(0, 0, 0, 0.3);
   position: relative;
   top: 0;
 }
@@ -144,7 +148,7 @@ body {
   padding: 1rem;
   box-sizing: border-box;
   justify-content: center;
-  margin: 2rem 0;
+  margin: 0; /* Убрали отступы */
 }
 
 .text-input {
@@ -170,7 +174,7 @@ body {
   background: #222;
   padding: 2rem;
   border-radius: 1rem;
-  margin: 2rem 0 1.5rem;
+  margin: 0; /* Убрали отступы */
   max-width: 90vw;
   width: 700px;
   box-shadow: 0 0 20px rgba(0, 255, 255, 0.2);
@@ -181,15 +185,13 @@ body {
    КОНТЕЙНЕР КНОПКИ СТОПА
 ========================== */
 .stop-btn-wrapper {
-  margin: 2rem 0;
+  margin: 0; /* Убрали отступы */
   display: flex;
   justify-content: center;
   width: 100%;
 }
 
-/* ==========================
-   АНИМАЦИИ
-========================== */
+/* Остальные анимации и эффекты остаются без изменений */
 @keyframes pulse {
   0%,
   100% {
@@ -258,9 +260,6 @@ body {
   }
 }
 
-/* ==========================
-   ДОП. КЛАССЫ ЭФФЕКТОВ
-========================== */
 .glow {
   animation: globalGlow 2.5s ease-in-out infinite alternate;
 }
