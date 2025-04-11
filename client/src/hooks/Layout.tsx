@@ -1,10 +1,10 @@
 import { Outlet } from 'react-router';
-import NavBar from '../components/ui/NavBar';
+import Navbar from '../ui/Navbar';
 
 export default function Layout(): React.JSX.Element {
   return (
     <>
-      <NavBar />
+      <Navbar />
       <Outlet />
     </>
   );

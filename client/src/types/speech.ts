@@ -41,6 +41,7 @@ export type SpeechOptions = {
   voice?: SpeechSynthesisVoice;
   pitch?: number;
   rate?: number;
+  onEnd?: () => void;
 };
 
 export type Window = {
